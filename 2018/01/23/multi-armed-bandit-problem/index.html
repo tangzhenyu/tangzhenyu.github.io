@@ -17,7 +17,7 @@
 <meta property="og:description" content="The multi-armed bandit problem is a class example to demonstrate the exploration versus exploitation dilemma. This post introduces the bandit problem and how to solve it using different exploration s">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/.com//exploration_vs_exploitation.png">
-<meta property="og:updated_time" content="2019-09-01T12:13:11.000Z">
+<meta property="og:updated_time" content="2019-09-01T12:19:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The Multi-Armed Bandit Problem and Its Solutions">
 <meta name="twitter:description" content="The multi-armed bandit problem is a class example to demonstrate the exploration versus exploitation dilemma. This post introduces the bandit problem and how to solve it using different exploration s">
@@ -189,7 +189,32 @@
 <p>The multi-armed bandit problem is a class example to demonstrate the exploration versus exploitation dilemma. This post introduces the bandit problem and how to solve it using different exploration strategies. </p>
 </blockquote>
 <a id="more"></a>
-<!--toc-->
+<div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#exploitation-vs-exploration">Exploitation vs Exploration</a></li>
+<li><a href="#what-is-multi-armed-bandit">What is Multi-Armed Bandit?</a><ul>
+<li><a href="#definition">Definition</a></li>
+<li><a href="#bandit-strategies">Bandit Strategies</a></li>
+</ul>
+</li>
+<li><a href="#e-greedy-algorithm">ε-Greedy Algorithm</a></li>
+<li><a href="#upper-confidence-bounds">Upper Confidence Bounds</a><ul>
+<li><a href="#hoeffding-s-inequality">Hoeffding’s Inequality</a></li>
+<li><a href="#ucb1">UCB1</a></li>
+<li><a href="#bayesian-ucb">Bayesian UCB</a></li>
+</ul>
+</li>
+<li><a href="#thompson-sampling">Thompson Sampling</a></li>
+<li><a href="#summary">Summary</a><ul>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+
 <p>Resources about multi-armed bandits <a href="https://github.com/tangzhenyu/Multi-arm-Bandit" target="_blank" rel="noopener">tangzhenyu/Multi-arm-Bandit</a></p>
 <h2><span id="exploitation-vs-exploration">Exploitation vs Exploration</span><a href="#exploitation-vs-exploration" class="header-anchor">#</a></h2><p>The exploration vs exploitation dilemma exists in many aspects of our life. Say, your favorite restaurant is right around the corner. If you go there every day, you would be confident of what you will get, but miss the chances of discovering an even better option. If you try new places all the time, very likely you are gonna have to eat unpleasant food from time to time. Similarly, online advisors try to balance between the known most attractive ads and the new ads that might be even more successful. </p>
 <p><img src="/.com//exploration_vs_exploitation.png" alt="bernoulli bandit"><br><em>Fig. 1. A real-life example of the exploration vs exploitation dilemma: where to eat? (Image source: UC Berkeley AI course <a href="http://ai.berkeley.edu/lecture_slides.html" target="_blank" rel="noopener">slide</a>, <a href="http://ai.berkeley.edu/slides/Lecture%2011%20--%20Reinforcement%20Learning%20II/SP14%20CS188%20Lecture%2011%20--%20Reinforcement%20Learning%20II.pptx" target="_blank" rel="noopener">lecture 11</a>.)</em></p>
